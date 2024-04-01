@@ -2057,7 +2057,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .blog01-home {
-  background-image: url(../dist/img/blog01/pexels-tima-miroshnichenko-6498953.jpg);
+  background-image: url(../dist/img/blog01/bgBlog.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
