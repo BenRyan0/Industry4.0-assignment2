@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/bLogo01.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./output.css" />
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <title>Ben Ryan Rinconada</title>
+  </head>
+  <body class="">
+    <!-- HEADER TOP START -->
+    <header class="fixed top-0 left-0 z-[9999] flex w-full items-center bg-transparent">
+      <div class="container md:px-20 px-0">
+        <div class="relative flex items-center justify-between">
+          <div class="px-4">
+            <a href="/" class="block py-6 text-lg font-bold text-dark dark:text-white"> <span class=" text-primary">Ben </span>Ryan Rinconada</a>
+          </div>
+          <div class="flex items-center px-4">
+            <nav id="nav-menu" class="fixed right-4 top-full hidden w-full rounded-lg bg-dark py-3 shadow-lg dark:bg-dark dark:shadow-slate-500 lg:md:static lg:md:block lg:md:max-w-full lg:md:rounded-none lg:md:bg-transparent lg:md:shadow-none lg:w-full dark:lg:bg-transparent">
+              <ul class="flex items-center justify-center">
+                <!-- <li class="group">
+                  <a href="index.html" class="mx-8 flex py-2 text-base font-semibold text-dark transition duration-200 ease-in-out visited:text-primary group-hover:text-primary dark:text-white dark:visited:text-primary"> Home </a>
+                </li> -->
+                <li class="group">
+                  <a href="#home" class="mx-8 flex py-2 text-base font-semibold text-dark transition duration-200 ease-in-out group-hover:text-primary dark:text-white">Home</a>
+                </li>
+                <li class="group">
+                  <a href="#projects" class="mx-8 flex py-2 text-base font-semibold text-dark transition duration-200 ease-in-out group-hover:text-primary dark:text-white">Projects</a>
+                </li>
+                <!-- <li class="group">
+                  <a href="#clients" class="mx-8 flex py-2 text-base font-semibold text-dark transition duration-200 ease-in-out group-hover:text-primary dark:text-white">Clients</a>
+                </li> -->
+                <li class="group">
+                  <a href="#contact" class="mx-8 flex py-2 text-base font-semibold text-dark transition duration-200 ease-in-out group-hover:text-primary dark:text-white">Contact Me</a>
+                </li>
+                <!-- <li class="group">
+                  <a href="#contact" class="mx-8 flex py-2 text-base font-semibold text-dark transition duration-200 ease-in-out group-hover:text-primary dark:text-white">Contact</a>
+                </li> -->
+              </ul>
+            </nav>
+            <li class="flex items-center pl-4 sm:pr-5 lg:pr-10">
+              <div class="flex">
+                <!-- <span class="mr-2 text-sm font-semibold text-slate-500">Light</span> -->
+                <input type="checkbox" class="hidden" id="dark-toggle" />
+                <label for="dark-toggle">
+                  <div class="flex h-9 w-14 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                    <div class="toggle-circle flex h-7 w-7 items-center justify-center rounded-full bg-white transition duration-300 ease-in-out">
+                      <svg role="img" class="dark:hidden" width="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="color-scheme-light">
+                        <path
+                          d="M12 18c-3.309 0-6-2.691-6-6s2.691-6 6-6 6 2.691 6 6-2.691 6-6 6zm0-10c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0-4a1 1 0 0 1-1-1V1a1 1 0 0 1 2 0v2a1 1 0 0 1-1 1zm0 20a1 1 0 0 1-1-1v-2a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1zM5.64 6.64a.997.997 0 0 1-.707-.293l-1.42-1.42a.999.999 0 1 1 1.414-1.414l1.42 1.42A.999.999 0 0 1 5.64 6.64zm14.139 14.139a.997.997 0 0 1-.707-.293l-1.42-1.42a.999.999 0 1 1 1.414-1.414l1.42 1.42a.999.999 0 0 1-.707 1.707zM3 13H1a1 1 0 1 1 0-2h2a1 1 0 0 1 0 2zm20 0h-2a1 1 0 1 1 0-2h2a1 1 0 1 1 0 2zM4.22 20.779a.999.999 0 0 1-.707-1.707l1.42-1.42a.999.999 0 1 1 1.414 1.414l-1.42 1.42a.993.993 0 0 1-.707.293zM18.359 6.64a.999.999 0 0 1-.707-1.707l1.42-1.42a.999.999 0 1 1 1.414 1.414l-1.42 1.42a.997.997 0 0 1-.707.293z"></path>
+                      </svg>
+                      <svg role="img" class="hidden dark:block" width="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="color-scheme-dark">
+                        <path
+                          d="M12.048 21.963c-.308 0-.618-.015-.93-.043-2.66-.246-5.064-1.513-6.771-3.567s-2.512-4.651-2.266-7.311a10.004 10.004 0 0 1 9.038-9.038 1 1 0 0 1 .896 1.589 6.008 6.008 0 0 0 1.258 8.392c2.078 1.536 5.055 1.536 7.133 0a1 1 0 0 1 1.591.896 9.951 9.951 0 0 1-9.949 9.082zM9.315 4.438a8.006 8.006 0 0 0-5.244 6.787 7.954 7.954 0 0 0 1.813 5.849 7.95 7.95 0 0 0 5.417 2.854 7.95 7.95 0 0 0 8.266-5.243 8.01 8.01 0 0 1-2.729.476 7.946 7.946 0 0 1-4.755-1.565C9.174 11.443 8.145 7.68 9.315 4.438z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </label>
+                <!-- <span class="ml-2 text-sm font-semibold text-slate-500">Dark</span> -->
+              </div>
+            </li>
+           
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- HEADER TOP END -->
+
+    <!-- NAVBAR BOTTOM START -->
+    <!-- <section id="bottom-navigation" class="md:hidden block fixed inset-x-0 bottom-0 z-10 bg-white shadow"> // if shown only tablet/mobile-->
+    <section id="bottom-navigation" class="fixed inset-x-0 bottom-0 z-[9999] block bg-white bg-opacity-70 shadow-lg dark:bg-dark dark:bg-opacity-90 lg:md:hidden">
+      <div id="tabs" class="flex justify-between">
+        <a href="#home" class="inline-block w-full justify-center pt-2 pb-1 text-center text-base font-bold text-dark transition duration-200 ease-in-out hover:text-primary dark:text-white dark:hover:text-primary">
+          <?xml version="1.0" ?><!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+          <svg width="25" height="25" class="mb-1 inline-block fill-current" id="Layer_1" style="enable-background: new 0 0 24 24" version="1.1" viewBox="0 0 16 16" width="16px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path d="M15.45,7L14,5.551V2c0-0.55-0.45-1-1-1h-1c-0.55,0-1,0.45-1,1v0.553L9,0.555C8.727,0.297,8.477,0,8,0S7.273,0.297,7,0.555  L0.55,7C0.238,7.325,0,7.562,0,8c0,0.563,0.432,1,1,1h1v6c0,0.55,0.45,1,1,1h3v-5c0-0.55,0.45-1,1-1h2c0.55,0,1,0.45,1,1v5h3  c0.55,0,1-0.45,1-1V9h1c0.568,0,1-0.437,1-1C16,7.562,15.762,7.325,15.45,7z" />
+          </svg>
+          <span class="tab tab-home block text-xs">Home</span>
+        </a>
+        <a href="#portfolio" class="inline-block w-full justify-center pt-2 pb-1 text-center text-base font-bold text-dark transition duration-200 ease-in-out hover:text-primary dark:text-white dark:hover:text-primary">
+          <?xml version="1.0" ?><svg width="25" height="25" class="mb-1 inline-block fill-current" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M384 121.941V128H256V0h6.059c6.365 0 12.47 2.529 16.971 7.029l97.941 97.941A24.005 24.005 0 0 1 384 121.941zM248 160c-13.2 0-24-10.8-24-24V0H24C10.745 0 0 10.745 0 24v464c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24V160H248zM123.206 400.505a5.4 5.4 0 0 1-7.633.246l-64.866-60.812a5.4 5.4 0 0 1 0-7.879l64.866-60.812a5.4 5.4 0 0 1 7.633.246l19.579 20.885a5.4 5.4 0 0 1-.372 7.747L101.65 336l40.763 35.874a5.4 5.4 0 0 1 .372 7.747l-19.579 20.884zm51.295 50.479l-27.453-7.97a5.402 5.402 0 0 1-3.681-6.692l61.44-211.626a5.402 5.402 0 0 1 6.692-3.681l27.452 7.97a5.4 5.4 0 0 1 3.68 6.692l-61.44 211.626a5.397 5.397 0 0 1-6.69 3.681zm160.792-111.045l-64.866 60.812a5.4 5.4 0 0 1-7.633-.246l-19.58-20.885a5.4 5.4 0 0 1 .372-7.747L284.35 336l-40.763-35.874a5.4 5.4 0 0 1-.372-7.747l19.58-20.885a5.4 5.4 0 0 1 7.633-.246l64.866 60.812a5.4 5.4 0 0 1-.001 7.879z" />
+          </svg>
+          <span class="tab tab-explore block text-xs">Projects</span>
+        </a>
+        <a href="#contact" class="inline-block w-full justify-center pt-2 pb-1 text-center text-base font-bold text-dark transition duration-200 ease-in-out hover:text-primary dark:text-white dark:hover:text-primary">
+          <?xml version="1.0" ?><svg style="enable-background: new 0 0 24 24" version="1.1" width="25" height="25" class="mb-1 inline-block fill-current" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="info" />
+            <g id="icons">
+              <g id="user">
+                <ellipse cx="12" cy="8" rx="5" ry="6" />
+                <path d="M21.8,19.1c-0.9-1.8-2.6-3.3-4.8-4.2c-0.6-0.2-1.3-0.2-1.8,0.1c-1,0.6-2,0.9-3.2,0.9s-2.2-0.3-3.2-0.9    C8.3,14.8,7.6,14.7,7,15c-2.2,0.9-3.9,2.4-4.8,4.2C1.5,20.5,2.6,22,4.1,22h15.8C21.4,22,22.5,20.5,21.8,19.1z" />
+              </g>
+            </g>
+          </svg>
+          <span class="tab tab-kategori block text-xs">Contact Me</span>
+        </a>
+      </div>
+    </section>
+    <!-- NAVBAR BOTTOM START -->
+    <!-- HERO SECTION START -->
+    <section id="home" class="pt-1 lg:pt-20 dark:bg-dark h-screen flex items-center">
+      <div class="container md:px-20 px-0">
+        <div class="flex flex-wrap lg:flex-row items-center flex-col-reverse ">
+          <div class="w-full self-center px-4 lg:w-1/2 text-center lg:text-start">
+            <h1 class="text-base font-semibold text-primary md:text-xl my-2">
+              Hello There 👋, I'm
+              <span class="mt-1 block text-3xl font-bold text-dark dark:text-white lg:text-5xl">Ben Ryan Rinconada</span>
+            </h1>
+
+            <!-- <h2 class="mb-1 lg:mb-2 text-md font-medium text-secondary lg:text-xs">and I am a third-year Bachelor of Science in Information Technology (BSIT) student. </h2> -->
+            <h3 class="mb-1 lg:mb-0 text-sm font-medium text-secondary lg:text-md pr-8">I am a third-year Bachelor of Science in Information Technology (BSIT) student. This repository serves as a collection of my assignments.</h2>
+          </div>
+          <div class="w-full self-center px-4 lg:w-1/2">
+            <div class="relative mt-3 lg:mt-0 lg:mr-0">
+              <img src="./img/BenProfile02.png" alt="Ben Ryan Rinconada" class="relative z-10 mx-auto max-w-[260px] lg:max-w-[450px]" />
+              <!-- <span class="absolute -bottom-0 left-1/2 -translate-x-1/2">
+                <svg width="380" height="380" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="#14b8a6" d="M43.6,-48.7C54.7,-32.6,60.6,-16.3,62.4,1.7C64.1,19.8,61.7,39.5,50.6,51.9C39.5,64.2,19.8,69.2,2.2,67C-15.4,64.8,-30.8,55.5,-46.8,43.1C-62.9,30.8,-79.6,15.4,-80.8,-1.2C-82,-17.7,-67.6,-35.5,-51.6,-51.6C-35.5,-67.7,-17.7,-82.2,-0.7,-81.5C16.3,-80.8,32.6,-64.8,43.6,-48.7Z" transform="translate(100 100) scale(1.2)" />
+                </svg>
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- HERO SECTION END -->
+    
+    <!-- PROJECTS SECTION START -->
+    
+    <!-- PROJECTS SECTION END -->
+ 
+
+
+
+    <!-- PORTFOLIO SECTION START -->
+    <section id="projects" class="bg-slate-100 pt-24 pb-16 dark:bg-slate-800">
+      <div class="container md:px-20 px-0">
+        <h2 class="text-base font-bold text-gray-900 md:text-4xl dark:text-white px-4" >Recent Project/s:</h2>
+        <!-- <div class="flex w-full flex-wrap justify-start xl:mx-auto xl:w-full">
+          <h2 class="text-base font-bold text-gray-900 md:text-4xl dark:text-white" >Recent Project/s:</h2>
+        </div> -->
+
+        <div class="flex w-full flex-wrap justify-start px-4 xl:mx-auto xl:w-full">
+          <div class="mb-12 p-4 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="./img/projects/project01.png" alt="Dico4" width="w-full"  onerror="this.src='./img/Untitled-1.png'" />
+            </div>
+            <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white flex items-center gap-1">INDUSTRY4.0: Augmented Reality and Virtual Reality
+              <a href="./blog01.html" target="_self" class="mr-2 flex h-11 w-11 items-center justify-center  text-secondary transition duration-200 ease-in-out hover:text-white">
+                <?xml version="1.0" ?><svg fill="none" height="24" viewBox="0 0 24 24" width="24" class="fill-current" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6.25 4.5C5.2835 4.5 4.5 5.2835 4.5 6.25V12H9.25C10.7688 12 12 13.2312 12 14.75V19.5H17.75C18.7165 19.5 19.5 18.7165 19.5 17.75V13.75C19.5 13.3358 19.8358 13 20.25 13C20.6642 13 21 13.3358 21 13.75V17.75C21 19.5449 19.5449 21 17.75 21L6.75 21.0002L6.71603 21H6.25C4.45507 21 3 19.5449 3 17.75V6.25C3 4.45507 4.45507 3 6.25 3H10.25C10.6642 3 11 3.33579 11 3.75C11 4.16421 10.6642 4.5 10.25 4.5H6.25ZM13 3.75C13 3.33579 13.3358 3 13.75 3H20.2505C20.6647 3 21.0005 3.33579 21.0005 3.75V10.25C21.0005 10.6642 20.6647 11 20.2505 11C19.8362 11 19.5005 10.6642 19.5005 10.25V5.56074L14.2803 10.7804C13.9874 11.0732 13.5125 11.0732 13.2196 10.7803C12.9268 10.4874 12.9268 10.0125 13.2197 9.71964L18.4399 4.5H13.75C13.3358 4.5 13 4.16421 13 3.75Z" />
+                </svg>
+              </a>
+            </h3>
+            <p class="mb-6 text-base font-medium text-secondary">we're diving into the exciting world of Augmented Reality (AR) and Virtual Reality (VR), exploring how they're changing the way we experience the world.</p>
+          
+          </div>
+       
+
+        </div>
+      </div>
+    </section>
+  
+    <!-- PORTFOLIO SECTION END -->
+
+  
+
+    <!-- CONTACT SECTION START -->
+    <section id="contact" class="dark:bg-slate-800 h-[300px] py-3 flex items-end justify-end">
+      <div class="container md:px-20 px-0">
+        <div class="w-full ">
+          <div class="mx-auto mb-2 max-w-xl text-center">
+            <h4 class="mb-1 text-lg font-semibold text-primary">Contact</h4>
+            <h2 class="mb-0 text-xl font-bold text-dark dark:text-white sm:text-4xl lg:text-2xl">Get In Touch With Me</h2>
+          </div>
+        </div>
+
+        <div class="item-center justify-center mb-1 mt-0 flex"> 
+
+          <a href="https://github.com/BenRyan0" target="_blank" class="mr-2 flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 text-secondary transition duration-200 ease-in-out hover:border-primary hover:bg-primary hover:text-white">
+            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>GitHub</title>
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+            </svg>
+          </a>
+
+ 
+          <a href="mailto:benryanrinconada5@gmail.com" target="_blank" class="mr-2 flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 text-secondary transition duration-200 ease-in-out hover:border-primary hover:bg-primary hover:text-white">
+            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>Gmail</title>
+              <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
+            </svg>
+          </a>
+
+   
+          <a href="https://drive.google.com/file/d/1mypmNduENrAJsGgkbrzEfiSufoq1MSWF/view?usp=sharing" target="_blank" class="mr-2 flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 text-secondary transition duration-200 ease-in-out hover:border-primary hover:bg-primary hover:text-white">
+            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>QuickLook</title>
+              <path
+                d="M18.814 11.913a4.786 4.786 0 0 1-4.786 4.786 4.786 4.786 0 0 1-4.786-4.786 4.786 4.786 0 0 1 4.786-4.786 4.786 4.786 0 0 1 4.786 4.786zm1.687 0a6.473 6.473 0 0 1-6.473 6.473 6.473 6.473 0 0 1-6.473-6.473 6.473 6.473 0 0 1 6.473-6.473 6.473 6.473 0 0 1 6.473 6.473zM7.155 1c-2.992.545-5.533 1.037-5.638 1.084a1.274 1.274 0 0 0-.352.298l-.158.205v18.819l.158.205c.088.111.246.246.352.299.24.111 11.095 2.09 11.481 2.09.322 0 .527-.094.756-.334.269-.287.286-.474.269-2.64l-.018-2.003h.293c1.03 0 2.447-.445 3.425-1.077.229-.146.434-.27.457-.27.023 0 .755.715 1.622 1.587.872.873 1.65 1.622 1.739 1.669.088.047.28.082.427.082.592 0 1.025-.416 1.025-.972 0-.17-.03-.38-.065-.474-.029-.088-.784-.89-1.668-1.78l-1.61-1.61.216-.322c1.154-1.716 1.458-4.075.785-6.095-.357-1.066-.837-1.827-1.692-2.688-1.124-1.13-2.29-1.745-3.835-2.014a6.683 6.683 0 0 0-.82-.088h-.299l.018-2.002c.017-2.143 0-2.313-.258-2.623-.222-.264-.439-.352-.825-.346-.188 0-2.787.451-5.785 1.001z" />
+            </svg>
+          </a>
+  
+          <a href="https://discordapp.com/users/1011183758579343430" target="_blank" class="mr-2 flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 text-secondary transition duration-200 ease-in-out hover:border-primary hover:bg-primary hover:text-white">
+            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>Discord</title>
+              <path
+                d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- CONTACT SECTION END -->
+
+    <!-- FOOTER SECTION START -->
+    <footer class="bg-dark pt-1 pb-12">
+      <div class="container md:px-20 px-0">
+        <div class="flex flex-wrap">
+          <div class="mb-12 w-full px-4 md:w-1/3"></div>
+          <div class="mb-12 w-full px-4 md:w-1/3"></div>
+          <div class="mb-12 w-full px-4 md:w-1/3"></div>
+        </div>
+        <div class="w-full border-t border-slate-700 pt-10">
+          <!-- SOCIAL MEDIA START-->
+
+          <!-- SOCIAL MEDIA END-->
+          <p class="text-center text-sm font-medium text-slate-500">
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            | Made by <a href="#" class="font-bold text-primary">Ben Ryan Rinconada</a>, with <a href="https://tailwindcss.com/" target="_blank" class="font-bold text-sky-500">Tailwind CSS</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER SECTION END -->
+
+    <!-- BACK TO TOP START -->
+    <a href="#home" class="fixed right-4 bottom-24 z-[9999] hidden h-11 w-11 items-center justify-center rounded-full bg-primary p-4 hover:animate-pulse lg:md:h-14 lg:md:w-14 lg:md:bottom-4" id="to-top">
+      <span class="mt-1 block h-3 w-3 rotate-45 border-t-4 border-l-4 lg:md:mt-2 lg:md:h-5 lg:md:w-5"></span>
+    </a>
+    <!-- BACK TO TOP END -->
+
+    <!-- SCRIPTS START -->
+    <script src="./js/script.js"></script>
+
+    <script src="../node_modules/flowbite/dist/flowbite.min.js.map"></script>
+
+    <!-- SCRIPTS END -->
+  </body>
+</html>
