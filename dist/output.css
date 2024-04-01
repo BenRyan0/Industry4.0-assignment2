@@ -2058,6 +2058,7 @@ body::-webkit-scrollbar-thumb {
 
 .blog01-home {
   background-image: url(../dist/img/blog01/bgBlog.jpg);
+  background-color: #0f172a;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
